@@ -7,7 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Text="Hello, world!" Margin="20" FontSize="30" />
+	
+	  <Grid Margin="10,20">
+	 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" MaxHeight="90" />
+					 <RowDefinition Height="Auto" MaxHeight="90" />
+					  <RowDefinition Height="Auto" MaxHeight="90" />
+					   <RowDefinition Height="Auto" MaxHeight="90" />
+                </Grid.RowDefinitions>
+				
+				
+	  <TextBlock   Grid.Row="0" Text="First name"    />
+	   <TextBox Grid.Column="1" Text="enter your first name" Grid.Row="0" x:Name="FirstName"></TextBox>
+
+	  <TextBlock   Grid.Row="1" Text="Last Name"     />
+	   <TextBox Grid.Column="1" Grid.Row="0"  ></TextBox>
+
+	  <TextBlock   Grid.Row="2" Text="Surname"    />
+	   <TextBox Grid.Column="1" Grid.Row="2"  ></TextBox>
+	   
+	   
+	   
+      <TextBlock Name="HelloLabel"  Grid.Row="3"/> 
+	    <Border  BorderThickness="2" BorderBrush="LightGreen" Grid.Column="1" Grid.Row="3"  ></Border>
+      
+      <Button Grid.Row="4"  Click="SayHello">Click Me!</Button>
     </Grid>
+
+	
 </Page>

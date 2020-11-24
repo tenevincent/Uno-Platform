@@ -11,27 +11,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.iOS", "FirstApp\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.UWP", "FirstApp\FirstApp.UWP\FirstApp.UWP.csproj", "{0D886CAE-FBF6-498E-AFF8-3E2E5680ED38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.Wasm", "FirstApp\FirstApp.Wasm\FirstApp.Wasm.csproj", "{56CA7517-7C3F-4712-A3D1-8F55FEE33B69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstApp.Wasm", "FirstApp\FirstApp.Wasm\FirstApp.Wasm.csproj", "{56CA7517-7C3F-4712-A3D1-8F55FEE33B69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.macOS", "FirstApp\FirstApp.macOS\FirstApp.macOS.csproj", "{22B695A2-A04E-4F97-929C-BEF364AF3DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.Skia.Wpf.Host", "FirstApp\FirstApp.Skia.Wpf.Host\FirstApp.Skia.Wpf.Host.csproj", "{DA4B3F47-07B8-406E-9115-2E15440C97FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstApp.Skia.Wpf.Host", "FirstApp\FirstApp.Skia.Wpf.Host\FirstApp.Skia.Wpf.Host.csproj", "{DA4B3F47-07B8-406E-9115-2E15440C97FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.Skia.Wpf", "FirstApp\FirstApp.Skia.Wpf\FirstApp.Skia.Wpf.csproj", "{41457382-FA49-40AD-AB23-B53606F2A228}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstApp.Skia.Wpf", "FirstApp\FirstApp.Skia.Wpf\FirstApp.Skia.Wpf.csproj", "{41457382-FA49-40AD-AB23-B53606F2A228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.Skia.Gtk", "FirstApp\FirstApp.Skia.Gtk\FirstApp.Skia.Gtk.csproj", "{32E2FABA-91D6-43BF-A5BE-C6487071D186}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstApp.Skia.Gtk", "FirstApp\FirstApp.Skia.Gtk\FirstApp.Skia.Gtk.csproj", "{32E2FABA-91D6-43BF-A5BE-C6487071D186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp.Skia.Tizen", "FirstApp\FirstApp.Skia.Tizen\FirstApp.Skia.Tizen.csproj", "{1FE936E3-EAD5-4E1F-AE2B-D62E6CA74159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstApp.Skia.Tizen", "FirstApp\FirstApp.Skia.Tizen\FirstApp.Skia.Tizen.csproj", "{1FE936E3-EAD5-4E1F-AE2B-D62E6CA74159}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FirstApp.Shared", "FirstApp\FirstApp.Shared\FirstApp.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{0d886cae-fbf6-498e-aff8-3e2e5680ed38}*SharedItemsImports = 4
 		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{1fe936e3-ead5-4e1f-ae2b-d62e6ca74159}*SharedItemsImports = 5
+		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{22b695a2-a04e-4f97-929c-bef364af3da4}*SharedItemsImports = 4
 		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{32e2faba-91d6-43bf-a5be-c6487071d186}*SharedItemsImports = 5
 		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{41457382-fa49-40ad-ab23-b53606f2a228}*SharedItemsImports = 5
 		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{56ca7517-7c3f-4712-a3d1-8f55fee33b69}*SharedItemsImports = 5
+		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{5ad40313-260f-495a-9659-63bacb9a7bc9}*SharedItemsImports = 4
 		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		FirstApp\FirstApp.Shared\FirstApp.Shared.projitems*{90586fae-8c6d-4f40-99ec-ade8fff795cf}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

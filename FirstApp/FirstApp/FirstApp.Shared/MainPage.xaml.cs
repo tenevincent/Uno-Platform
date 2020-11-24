@@ -45,7 +45,15 @@ namespace FirstApp
             stackPanel.Children.Add(progressBar);
 
 
-            this.Content = stackPanel;
+            //this.Content = stackPanel;
         }
+
+        private void SayHello(object sender, RoutedEventArgs e)
+        {
+            HelloLabel.Text = "Hello, " + FirstName.Text;
+        }
+
+
+
     }
 }
