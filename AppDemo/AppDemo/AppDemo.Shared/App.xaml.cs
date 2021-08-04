@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace FirstApp
+namespace AppDemo
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -64,7 +64,6 @@ namespace FirstApp
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
-            
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
