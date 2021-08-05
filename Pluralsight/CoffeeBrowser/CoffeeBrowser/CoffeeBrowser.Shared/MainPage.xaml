@@ -5,128 +5,174 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:CoffeeBrowser"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:no_wasm="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d">
 
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <ScrollViewer>
 
-        <!--  Header  -->
-        <Border Grid.ColumnSpan="2" Background="#F05A28">
-            <StackPanel
-                Margin="5"
-                HorizontalAlignment="Center"
-                Orientation="Horizontal">
-                <Image
-                    Height="100"
-                    Source="/Assets/Images/logo.png"
-                    Stretch="UniformToFill" />
-                <TextBlock
-                    VerticalAlignment="Center"
-                    FontSize="30"
-                    Text="Coffee Browser" />
-            </StackPanel>
-        </Border>
-
-        <!--  CoffeeList  -->
-
-
-        <ListView
-            Grid.Row="1"
-            BorderBrush="LightGray"
-            BorderThickness="1"
-            ItemsSource="{x:Bind ViewModel.Coffees, Mode=OneWay}"
-            SelectedItem="{x:Bind ViewModel.SelectedCoffee, Mode=TwoWay}">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalAlignment" Value="Stretch" />
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                </Style>
-            </ListView.ItemContainerStyle>
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock
-                            FontSize="12"
-                            FontWeight="Bold"
-                            Text="{Binding Name}" />
-                        <TextBlock
-                            Grid.Row="1"
-                            FontSize="12"
-                            Text="{Binding Description}" />
-
-                        <Border
-                            Grid.Row="2"
-                            Height="1"
-                            HorizontalAlignment="Stretch"
-                            Background="LightGray"
-                            BorderBrush="LightGray"
-                            BorderThickness="1" />
-
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
-
-
-        <!--  CoffeeDetails  -->
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
-                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
-            <TextBox
-                Margin="10"
-                Header="Name"
-                IsReadOnly="True"
-                Text="{x:Bind ViewModel.SelectedCoffee.Name, Mode=OneWay}" />
+            <!--  Header  -->
+            <Border Grid.ColumnSpan="2" Background="#F05A28">
+                <StackPanel
+                    Margin="5"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Image
+                        Height="80"
+                        Source="/Assets/Images/logo.png"
+                        Stretch="UniformToFill" />
+                    <TextBlock
+                        x:Name="textBlockHeader"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        Text="Coffee Browser" />
+                </StackPanel>
+            </Border>
 
-            <TextBox
+            <!--  CoffeeList  -->
+
+
+            <ListView
+                x:Name="listviewCoffee"
                 Grid.Row="1"
-                Margin="10"
-                AcceptsReturn="True"
-                Header="Description"
-                IsReadOnly="True"
-                Text="{x:Bind ViewModel.SelectedCoffee.Description, Mode=OneWay}"
-                TextAlignment="Left" />
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                ItemsSource="{x:Bind ViewModel.Coffees, Mode=OneWay}"
+                SelectedItem="{x:Bind ViewModel.SelectedCoffee, Mode=TwoWay}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
 
-            <StackPanel
-                Grid.Row="2"
-                Margin="0,0,0,10"
-                Orientation="Horizontal">
-                <Button
-                    MinWidth="80"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                FontSize="12"
+                                FontWeight="Bold"
+                                Text="{Binding Name}" />
+                            <TextBlock
+                                Grid.Row="1"
+                                FontSize="12"
+                                Text="{Binding Description}" />
+
+                            <Border
+                                Grid.Row="2"
+                                Height="1"
+                                HorizontalAlignment="Stretch"
+                                Background="LightGray"
+                                BorderBrush="LightGray"
+                                BorderThickness="1" />
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+            <!--  CoffeeDetails  -->
+            <Grid
+                x:Name="gridCoffeeDetails"
+                Grid.Row="1"
+                Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBox
                     Margin="10"
-                   
-                    Click="{x:Bind ViewModel.Previous}"
-                    Content="Previous" />
-                <Button
-                    MinWidth="80"
-                    Margin="0,10,10,10"
-                    Click="{x:Bind ViewModel.Next}"
-                    Content="Next" />
-            </StackPanel>
+                    Header="Name"
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.SelectedCoffee.Name, Mode=OneWay}" />
 
+                <TextBox
+                    Grid.Row="1"
+                    Margin="10"
+                    AcceptsReturn="True"
+                    Header="Description"
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.SelectedCoffee.Description, Mode=OneWay}"
+                    TextAlignment="Left"
+                    TextWrapping="Wrap" />
+
+                <Grid
+                    x:Name="gridButtonSet"
+                    Grid.Row="2"
+                    Margin="0,0,0,10"
+                    HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        MinWidth="80"
+                        Margin="10,10,10,10"
+                        HorizontalAlignment="Stretch"
+                        Click="{x:Bind ViewModel.Previous}"
+                        Content="Previous" />
+                    <Button
+                        Grid.Column="1"
+                        MinWidth="80"
+                        Margin="10,10,10,10"
+                        HorizontalAlignment="Stretch"
+                        Click="{x:Bind ViewModel.Next}"
+                        Content="Next" />
+                </Grid>
+
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <!--  Wide state  -->
+                    <VisualState x:Name="wideState">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="600" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="listviewCoffee.Visibility" Value="Visible" />
+                            <Setter Target="gridCoffeeDetails.(Grid.Column)" Value="1" />
+                            <Setter Target="gridCoffeeDetails.(Grid.ColumnSpan)" Value="1" />
+                            <Setter Target="gridButtonSet.HorizontalAlignment" Value="Left" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <!--  narrow state  -->
+                    <VisualState x:Name="narrowState">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="0" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="listviewCoffee.Visibility" Value="Collapsed" />
+                            <Setter Target="gridCoffeeDetails.(Grid.Column)" Value="0" />
+                            <Setter Target="gridCoffeeDetails.(Grid.ColumnSpan)" Value="2" />
+                            <Setter Target="gridButtonSet.HorizontalAlignment" Value="Stretch" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
         </Grid>
 
-    </Grid>
+    </ScrollViewer>
 </Page>
 
 

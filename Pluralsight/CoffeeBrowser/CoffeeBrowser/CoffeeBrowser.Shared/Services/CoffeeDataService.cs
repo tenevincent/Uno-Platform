@@ -1,6 +1,8 @@
 ﻿using CoffeeBrowser.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,5 +30,20 @@ namespace CoffeeBrowser.Services
       };
         }
     }
+
+
+
+    public class CoffeeWebApiDataProvider : ICoffeeDataService
+    {
+        private static readonly HttpClient _client = new HttpClient();
+
+        public async Task<IEnumerable<Coffee>> LoadCoffees()
+        {
+            var json = await _client.GetStringAsync(
+              "https://thomasclaudiushuber.com/pluralsight/coffees.json");
+            return JsonConvert.DeserializeObject<IEnumerable<Coffee>>(json);
+        }
+    }
+
 
 }

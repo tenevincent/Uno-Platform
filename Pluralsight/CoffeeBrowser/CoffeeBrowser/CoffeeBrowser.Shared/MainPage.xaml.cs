@@ -28,8 +28,12 @@ namespace CoffeeBrowser
         {
             this.InitializeComponent();
 
-            ViewModel = new MainPageViewModel(new CoffeeDataService());
+            ViewModel = new MainPageViewModel(new CoffeeWebApiDataProvider());
             this.Loaded += MainPage_Loaded;
+
+#if __WASM__
+            textBlockHeader.Text = "Coffee Browser WASM Edition";
+#endif
 
         }
 
