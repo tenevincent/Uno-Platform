@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="ControlsApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ControlsApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        Orientation="Vertical"
+        Spacing="10">
+
+        <TextBlock
+            Margin="20"
+            FontSize="30"
+            Text="Hello, world!" />
+
+
+        <Button
+            x:Name="btnOkDialog"
+            Grid.Row="1"
+            Click="Button_Click"
+            Content="Dialog" />
+
+        <Button
+            x:Name="btnOkCancelDialog"
+            Grid.Row="1"
+            Click="DoOkCancelDialog_Click"
+            Content="Dialog OK and Cancel" />
+
+        <Button
+            x:Name="btnBlockDialog"
+            Grid.Row="1"
+            Click="DoBlockDialog_Click"
+            Content="Dialog Content" />
+
+        <Button
+            x:Name="btnDreiDialog"
+            Grid.Row="1"
+            Click="DoDialogDreiButton_Click"
+            Content="Dialog Three Button" />
+
+
+
+
+    </StackPanel>
+</Page>
