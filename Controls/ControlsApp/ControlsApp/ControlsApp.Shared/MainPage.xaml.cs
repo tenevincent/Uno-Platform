@@ -97,6 +97,7 @@ namespace ControlsApp
         {
             ContentDialog subscribeDialog = new ContentDialog
             {
+              
                 Title = "Subscribe to App Service?",
                 Content = "Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.",
                 CloseButtonText = "Not Now",
